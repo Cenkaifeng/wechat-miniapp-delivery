@@ -17,8 +17,8 @@
       "install": {
         "canonical_repo_path": "skills/wechat-miniapp-delivery",
         "local_script": "python3 scripts/install_skill.py --target all",
-        "github_script": "curl -fsSL https://raw.githubusercontent.com/cenkaifeng-qiliangjia/wechat-miniapp-delivery/main/scripts/install_from_github.py | python3 - --target all",
-        "codex_repo_path": "python3 \"$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py\" --repo cenkaifeng-qiliangjia/wechat-miniapp-delivery --path skills/wechat-miniapp-delivery"
+        "github_script": "curl -fsSL https://raw.githubusercontent.com/Cenkaifeng/wechat-miniapp-delivery/main/scripts/install_from_github.py | python3 - --target all",
+        "codex_repo_path": "python3 \"$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py\" --repo Cenkaifeng/wechat-miniapp-delivery --path skills/wechat-miniapp-delivery"
       }
     },
     {
@@ -37,8 +37,8 @@
       "install": {
         "canonical_repo_path": "skills/wechat-miniapp-design",
         "local_script": "python3 scripts/install_skill.py --target all --skill wechat-miniapp-design",
-        "github_script": "curl -fsSL https://raw.githubusercontent.com/cenkaifeng-qiliangjia/wechat-miniapp-delivery/main/scripts/install_from_github.py | python3 - --target all --skill wechat-miniapp-design",
-        "codex_repo_path": "python3 \"$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py\" --repo cenkaifeng-qiliangjia/wechat-miniapp-delivery --path skills/wechat-miniapp-design"
+        "github_script": "curl -fsSL https://raw.githubusercontent.com/Cenkaifeng/wechat-miniapp-delivery/main/scripts/install_from_github.py | python3 - --target all --skill wechat-miniapp-design",
+        "codex_repo_path": "python3 \"$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py\" --repo Cenkaifeng/wechat-miniapp-delivery --path skills/wechat-miniapp-design"
       }
     }
   ]

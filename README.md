@@ -67,20 +67,23 @@
 ### 从 GitHub 直接安装整套 skills
 
 ```bash
-python3 scripts/install_from_github.py --target all
+curl -fsSL https://raw.githubusercontent.com/Cenkaifeng/wechat-miniapp-delivery/main/scripts/install_from_github.py \
+  | python3 - --target all
 ```
 
 只安装某一个 skill：
 
 ```bash
-python3 scripts/install_from_github.py --target all --skill wechat-miniapp-delivery
-python3 scripts/install_from_github.py --target all --skill wechat-miniapp-design
+curl -fsSL https://raw.githubusercontent.com/Cenkaifeng/wechat-miniapp-delivery/main/scripts/install_from_github.py \
+  | python3 - --target all --skill wechat-miniapp-delivery
+curl -fsSL https://raw.githubusercontent.com/Cenkaifeng/wechat-miniapp-delivery/main/scripts/install_from_github.py \
+  | python3 - --target all --skill wechat-miniapp-design
 ```
 
 ### 从本地 clone 安装整套 skills
 
 ```bash
-git clone https://github.com/cenkaifeng-qiliangjia/wechat-miniapp-delivery.git
+git clone https://github.com/Cenkaifeng/wechat-miniapp-delivery.git
 cd wechat-miniapp-delivery
 python3 scripts/install_skill.py --target all
 ```
@@ -98,15 +101,19 @@ Codex 的官方 installer 目前按单个 skill 路径安装，所以两条命�
 
 ```bash
 python3 "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo cenkaifeng-qiliangjia/wechat-miniapp-delivery \
+  --repo Cenkaifeng/wechat-miniapp-delivery \
   --path skills/wechat-miniapp-delivery
 ```
 
 ```bash
 python3 "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo cenkaifeng-qiliangjia/wechat-miniapp-delivery \
+  --repo Cenkaifeng/wechat-miniapp-delivery \
   --path skills/wechat-miniapp-design
 ```
+
+`scripts/install_from_github.py` 在本地 clone 中运行时会优先读取当前 checkout
+的 `origin`。通过上述 raw URL 执行时，则默认安装提供该脚本的仓库；也可以用
+`--repo owner/repo` 显式覆盖。
 
 ## 本地镜像生成
 
