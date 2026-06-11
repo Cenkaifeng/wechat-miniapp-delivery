@@ -28,9 +28,26 @@ def repo_from_checkout() -> str | None:
     if not (repo_root / "catalog.json").is_file():
         return None
 
+    remote_name = "origin"
     try:
+        upstream = subprocess.run(
+            [
+                "git",
+                "-C",
+                str(repo_root),
+                "rev-parse",
+                "--abbrev-ref",
+                "--symbolic-full-name",
+                "@{upstream}",
+            ],
+            capture_output=True,
+            check=False,
+            text=True,
+        )
+        if upstream.returncode == 0 and "/" in upstream.stdout:
+            remote_name = upstream.stdout.strip().split("/", 1)[0]
         result = subprocess.run(
-            ["git", "-C", str(repo_root), "remote", "get-url", "origin"],
+            ["git", "-C", str(repo_root), "remote", "get-url", remote_name],
             capture_output=True,
             check=False,
             text=True,
